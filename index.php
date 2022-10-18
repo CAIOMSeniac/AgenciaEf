@@ -7,17 +7,17 @@
             $nome = mysqli_real_escape_string($conn,$_POST['nome']);
             $senha = mysqli_real_escape_string($conn,$_POST['senha']);
             $Sqlquery = "
-            SELECT * FROM `usuarios` 
-            WHERE `senha` = '$senha' 
-            AND `nome` = '$nome' 
-            OR `email` = '$nome'
+            SELECT * FROM `Usuario` 
+            WHERE `Senha` = '$senha' 
+            AND `Nome` = '$nome' 
+            OR `Email` = '$nome'
             ";
             $result = mysqli_query($conn,$Sqlquery);
             $row = mysqli_num_rows($result);
             if($row == 1) {
                 $linha=mysqli_fetch_assoc($result);
-                $_SESSION['cargo'] = $linha["funcao"];
-
+                $_SESSION['NomeUsuario'] = $linha["Nome"];
+                header('Location:centralUser.php');
             } else {
                 $_SESSION['nao_autenticado'] = true;
                 $login_conf=false;
@@ -65,7 +65,7 @@
         <br><br>
         <div class="input-group">
         <div class="input-group-text" id="senharequeriada">requirido</div>
-        <input name= 'senha' type="text"  class="form-control" placeholder="senha" id="usuariosenha">
+        <input name= 'senha' type="password"  class="form-control" placeholder="senha" id="usuariosenha">
         </div>
         <br><br>
         <input name="confirmar" type="submit" class="btn btn-primary"  value="validar" id="confirmar">
