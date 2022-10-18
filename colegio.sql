@@ -5,26 +5,25 @@ CREATE DATABASE `AgenciaEF`;
 CREATE TABLE `Candidato` (
   `idCandidato` int PRIMARY KEY AUTO_INCREMENT,
   `NomeCompleto` varchar(50) NOT NULL,
-  `Whatsapp` varchar(25) NOT NULL,
   `Idade` int(3) NOT NULL,
-  `Whatsapp` varchar(25) NOT NULL,
+  `Email` varchar(25) NOT NULL,
+  `Whatsapp` varchar(20) NOT NULL,
   `Bairro` varchar(25) NOT NULL,
   `Escolaridade` varchar(25) NOT NULL,
   `AreaPretendida` varchar(25) NOT NULL,
-  `Email` varchar(25) NOT NULL,
-  `Curriculo` longblob NOT NULL);
+  `Curriculo` longblob);
 --
 -- tabela empresas
 --
 CREATE TABLE `Empresa` (
   `idEmpresa` int PRIMARY KEY AUTO_INCREMENT,
   `Agenciada` tinyint(1) NOT NULL,
-  `Telefone` varchar(25) NOT NULL,  
+  `Telefone` varchar(20) NOT NULL,  
   `Email` varchar(50) NOT NULL,
   `Nome` varchar(50) NOT NULL,
   `Cep` varchar(25) NOT NULL,
-  `NumeroRes` varchar(25) NOT NULL,
-  `ObservacoesEndereco` varchar(25) NOT NULL,
+  `NumeroResidencia` int(4) NOT NULL,
+  `ObservacoesEndereco` varchar(50) NOT NULL,
   `VagasAbertas` int(4) NOT NULL
   );
 
