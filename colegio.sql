@@ -23,7 +23,7 @@ CREATE TABLE `Empresa` (
   `Nome` varchar(50) NOT NULL,
   `Cep` varchar(25) NOT NULL,
   `NumeroResidencia` int(4) NOT NULL,
-  `ObservacoesEndereco` varchar(50) NOT NULL,
+  `ObservacoesEndereco` varchar(50) NULL,
   `VagasAbertas` int(4) NOT NULL
   );
 
@@ -31,7 +31,8 @@ CREATE TABLE `Empresa` (
 --  tabela de vagas
 --
 CREATE TABLE `Vagas` (
-  `idEmpresa` int PRIMARY KEY AUTO_INCREMENT,
+  `idCandidato` int PRIMARY KEY AUTO_INCREMENT,
+  `idEmpresa` int,
   `Atividades` TEXT NOT NULL,
   `Regime` varchar(25) NOT NULL,
   `Remuneracao` varchar(25) NOT NULL,
@@ -46,8 +47,14 @@ CREATE TABLE `Vagas` (
   `HorarioAtuacaoFim` varchar(5) NOT NULL,
   `Deadline` DATE NOT NULL,
   -- AgenteIntegrador e InteresseAgenciamento não aparecem para os agenciados
-  `AgenteIntegrador` tinyint(1) NOT NULL,
-  `HorarioAtuacaoFim` tinyint(1) NOT NULL
+  `AgenteIntegrador` tinyint(1),
+  `InteresseAgenciamento` tinyint(1)
   );
 
 
+CREATE TABLE `Usuario` (
+  `idUser` int PRIMARY KEY AUTO_INCREMENT,
+  `Email` varchar(50) NOT NULL,
+  `Nome` varchar(50) NOT NULL,
+  `Senha` varchar(50) NOT NULL
+);
