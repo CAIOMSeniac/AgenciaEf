@@ -59,6 +59,7 @@
     </div>
   </div>
 </nav>
+
   <!--CONDIÇÕES DE BUSCA/ FILTROS-->
 <form  id="filtr" method="POST">
 <div class="input-group mb-3">
