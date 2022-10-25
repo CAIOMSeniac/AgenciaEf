@@ -199,8 +199,6 @@ NOVA VAGA
 
 
         <form id="VagaForms" method="POST" class="row g-3">
-
-          
           <div class="mb-3">
           <label class="col-form-label">Atividades:</label>
             <textarea  required type="text" name="model-Atividades-VNV" class="form-control" id="model-Atividades-VNV"></textarea>
@@ -222,6 +220,7 @@ NOVA VAGA
             <textarea  required type="text" name="model-OutrosBenef-VNV" class="form-control" id="model-OutrosBenef-VNV"></textarea>
           </div>
         <div class="mb-3">
+          <!-----------CURSO PAGO EXCLUSIVO PARA AGENCIADOS------------>
         <label  class="col-form-label">Curso Pago:</label>
         <select class="form-select" aria-label="Default select example" form="VagaForms" name="model-Regime-VNV" id="model-Regime-VNV">
           <option selected value="TÉCNICO">SÓ TÉCNICO</option>
@@ -234,9 +233,7 @@ NOVA VAGA
           <label class="col-form-label">Perfil esperado:</label>
             <textarea  required type="text" name="model-Atividades-VNV" class="form-control" id="model-Atividades-VNV"></textarea>
           </div>
-          <div class="mb-3">
           <label class="col-form-label">Horário de atuação:</label>
-        </div>
         <div class="col-md-6">
           <label class="form-label">Entrada:</label>
           <input type="time" class="form-control" name="model-Entrada-VNV" id="model-Entrada-VNV"required>
@@ -244,6 +241,25 @@ NOVA VAGA
           <div class="col-md-6">
           <label class="form-label">Saida:</label>
           <input type="time" class="form-control" name="model-Saida-VNV" id="model-Saida-VNV"required>
+          </div>
+
+          <div class="mb-3">
+            <label  class="col-form-label">IDADE MÍNIMA:</label>
+            <input type="number" name="model-IDADE-VNV" id="model-IDADE-VNV" min="1" max="99" step="1" />
+          </div>
+          <div class="mb-3">
+          <label  class="col-form-label">ESCOLARIDADE MÍNIMA:</label>
+          <select class="form-select" aria-label="Default select example" form="VagaForms" name="model-ESCOLARIDADE-VNV" id="model-ESCOLARIDADE-VNV">
+            <option selected value="Fundamental">Fundamental</option>
+            <option value="Medio_Cursando">Medio Cursando</option>
+            <option value="Medio_Completo">Medio Completo</option>
+            <option value="Superior_Cursando">Superior Cursando</option>
+            <option value="Superior_Completo">Superior Completo</option>
+         </select>
+          </div>
+          <div class="mb-3">
+            <label  class="col-form-label">Deadline:</label>
+            <input type="date" name="model-Deadline-VNV" id="model-Deadline-VNV" class="form-control"/>
           </div>
        </div>
       <div class="modal-footer">
