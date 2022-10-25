@@ -200,7 +200,44 @@ NOVA VAGA
 
         <form id="VagaForms" method="POST" class="row g-3">
 
-          <div class="col-md-6">
+          
+          <div class="mb-3">
+          <label class="col-form-label">Atividades:</label>
+            <textarea  required type="text" name="model-Atividades-VNV" class="form-control" id="model-Atividades-VNV"></textarea>
+          </div>
+          <div class="mb-3">
+          <label  class="col-form-label">Regime:</label>
+          <select class="form-select" aria-label="Default select example" form="VagaForms" name="model-Regime-VNV" id="model-Regime-VNV">
+            <option selected value="CLT">CLT</option>
+            <option value="MEI">MEI</option>
+            <option value="ESTÁGIO REMUNERADO">ESTÁGIO REMUNERADO</option>
+         </select>
+      </div>
+      <div class="mb-3">
+          <label class="col-form-label">Remuneração:</label>
+            <input  required type="number" min="0"step="100" name="model-Remuneracao-VNV" class="form-control" id="model-Remuneracao-VNV">
+          </div>
+          <div class="mb-3">
+          <label class="col-form-label">Outros Beneficios:</label>
+            <textarea  required type="text" name="model-OutrosBenef-VNV" class="form-control" id="model-OutrosBenef-VNV"></textarea>
+          </div>
+        <div class="mb-3">
+        <label  class="col-form-label">Curso Pago:</label>
+        <select class="form-select" aria-label="Default select example" form="VagaForms" name="model-Regime-VNV" id="model-Regime-VNV">
+          <option selected value="TÉCNICO">SÓ TÉCNICO</option>
+          <option value="SUPERIOR">SÓ SUPERIOR</option>
+          <option value="TÉCNICO E SUPERIOR">TÉCNICO E SUPERIOR</option>
+          <option value="NÃO">NÃO</option>
+        </select>
+        </div>
+        <div class="mb-3">
+          <label class="col-form-label">Perfil esperado:</label>
+            <textarea  required type="text" name="model-Atividades-VNV" class="form-control" id="model-Atividades-VNV"></textarea>
+          </div>
+          <div class="mb-3">
+          <label class="col-form-label">Horário de atuação:</label>
+        </div>
+        <div class="col-md-6">
           <label class="form-label">Entrada:</label>
           <input type="time" class="form-control" name="model-Entrada-VNV" id="model-Entrada-VNV"required>
           </div>
@@ -208,18 +245,14 @@ NOVA VAGA
           <label class="form-label">Saida:</label>
           <input type="time" class="form-control" name="model-Saida-VNV" id="model-Saida-VNV"required>
           </div>
-          <div class="mb-3">
-          <label class="col-form-label">Atividades:</label>
-            <textarea  required type="text" name="model-Atividades-VNV" class="form-control" id="model-Atividades-VNV"></textarea>
-          </div>
-      </div>
+       </div>
       <div class="modal-footer">
         <button  id="CriaVaga" name='CriaVaga' type="submit" class="btn btn-primary" data-bs-dismiss="modal">confirmar</button>
       </div>
       </form>
     </div>
   </div>
-</div>
+  </div>
 </body>
 </html>
 <script type="text/javascript">
