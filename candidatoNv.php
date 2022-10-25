@@ -2,7 +2,7 @@
 session_start();
 include_once('conexao_Banco.php');
 $querySQL ="INSERT INTO `candidato`(`NomeCompleto`, `Idade`, `Email`,
- `Whatsapp`, `Bairro`, `Escolaridade`, `AreaPretendida`, `Curriculo`)
+ `Whatsapp`, `Bairro`, `Escolaridade`, `AreaPretendida`)
 VALUES (";
 $nome = mysqli_real_escape_string($conn,$_POST['NOME']);
 $idade = mysqli_real_escape_string($conn,$_POST['IDADE']);

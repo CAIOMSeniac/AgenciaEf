@@ -31,7 +31,7 @@ CREATE TABLE `Empresa` (
 --  tabela de vagas
 --
 CREATE TABLE `Vagas` (
-  `idCandidato` int PRIMARY KEY AUTO_INCREMENT,
+  `idVaga` int PRIMARY KEY AUTO_INCREMENT,
   `idEmpresa` int,
   `Atividades` TEXT NOT NULL,
   `Regime` varchar(25) NOT NULL,

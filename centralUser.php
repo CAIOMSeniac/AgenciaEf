@@ -77,28 +77,28 @@ NOVA VAGA
         <form id="CandidatoForms" method="POST">
 
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label"> NOME COMPLETO:</label>
-            <input required type="text" name="model-NOME" class="form-control" id="model-NOME">
+            <label  class="col-form-label"> NOME COMPLETO:</label>
+            <input required type="text" name="model-NOME-CANV" class="form-control" id="model-NOME-CANV">
           </div>
           <div class="mb-3">
-            <label for="recipient-name" class="col-form-label"> IDADE:</label>
-            <input type="number" name="model-IDADE" id="model-IDADE" min="1" max="99" step="1" />
+            <label  class="col-form-label"> IDADE:</label>
+            <input type="number" name="model-IDADE-CANV" id="model-IDADE-CANV" min="1" max="99" step="1" />
           </div>
           <div class="mb-3">
-          <label for="recipient-name" class="col-form-label">BAIRRO:</label>
-            <input required type="text" name="model-BAIRRO" class="form-control" id="model-BAIRRO">
+          <label  class="col-form-label">BAIRRO:</label>
+            <input required type="text" name="model-BAIRRO-CANV" class="form-control" id="model-BAIRRO-CANV">
           </div>
           <div class="mb-3">
-          <label for="recipient-name" class="col-form-label">EMAIL:</label>
-            <input required type="email" name="model-EMAIL" class="form-control" id="model-EMAIL" placeholder="email@email.com.br">
+          <label  class="col-form-label">EMAIL:</label>
+            <input required type="email" name="model-EMAIL-CANV" class="form-control" id="model-EMAIL-CANV" placeholder="email@email.com.br">
           </div>
           <div class="mb-3">
-          <label for="recipient-name" class="col-form-label">WHATSAPP:</label>
-            <input required type="text" name="model-WHATSAPP" class="form-control" id="model-WHATSAPP" placeholder="+55 11 12345-6789">
+          <label  class="col-form-label">WHATSAPP:</label>
+            <input required type="text" name="model-WHATSAPP-CANV" class="form-control" id="model-WHATSAPP-CANV" placeholder="+55 11 12345-6789">
           </div>
           <div class="mb-3">
-          <label for="recipient-name" class="col-form-label">ESCOLARIDADE:</label>
-          <select class="form-select" aria-label="Default select example" form="CandidatoForms" name="model-ESCOLARIDADE" id="model-ESCOLARIDADE">
+          <label  class="col-form-label">ESCOLARIDADE:</label>
+          <select class="form-select" aria-label="Default select example" form="CandidatoForms" name="model-ESCOLARIDADE-CANV" id="model-ESCOLARIDADE-CANV">
             <option selected value="Fundamental">Fundamental</option>
             <option value="Medio_Cursando">Medio Cursando</option>
             <option value="Medio_Completo">Medio Completo</option>
@@ -107,8 +107,8 @@ NOVA VAGA
          </select>
           </div>
           <div class="mb-3">
-          <label for="recipient-name" class="col-form-label">Area Pretendida:</label>
-          <select class="form-select" aria-label="Default select example" form="CandidatoForms" name="model-AREA-PRETENDIDA" id="model-AREA-PRETENDIDA">
+          <label  class="col-form-label">Area Pretendida:</label>
+          <select class="form-select" aria-label="Default select example" form="CandidatoForms" name="model-AREA-PRETENDIDA-CANV" id="model-AREA-PRETENDIDA-CANV">
             <option selected value="Gestão">Gestão</option>
             <option value="TI">TI</option>
             <option value="Industria">Industria</option>
@@ -125,20 +125,118 @@ NOVA VAGA
     </div>
   </div>
 </div>
+
+
+
+
+
+
+<!-----------NOVA EMPRESA------------>
+<div class="modal fade" id="EmpresaNova" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Registrando nova empresa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+
+        <form id="EmpresaForms" method="POST">
+          <div class="form-check form-switch">
+          <input value="1" id="model-Agenciada-EMPNV" name="model-Agenciada-EMPNV" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked>
+          <label  class="form-check-label" for="flexSwitchCheckDefault">Agenciada</label>
+          </div>
+          <div class="mb-3">
+            <label  class="col-form-label"> NOME:</label>
+            <input required type="text" name="model-NOME-EMPNV" class="form-control" id="model-NOME-EMPNV">
+          </div>
+          <div class="mb-3">
+          <label  class="col-form-label">Cep:</label>
+            <input required type="text" name="model-Cep-EMPNV" class="form-control" id="model-Cep-EMPNV">
+          </div>
+          <div class="mb-3">
+          <label  class="col-form-label">Numero da Residencia:</label>
+            <input required type="text" name="model-NumResiden-EMPNV" class="form-control" id="model-NumResiden-EMPNV">
+          </div>
+          <div class="mb-3">
+          <label  class="col-form-label">Outras informações sobre o endereço:</label>
+            <input required type="text" name="model-OuInfoEnder-EMPNV" class="form-control" id="model-OuInfoEnder-EMPNV">
+          </div>
+          <div class="mb-3">
+          <label  class="col-form-label">EMAIL:</label>
+            <input required type="email" name="model-EMAIL-EMPNV" class="form-control" id="model-EMAIL-EMPNV" placeholder="email@email.com.br">
+          </div>
+          <div class="mb-3">
+          <label  class="col-form-label">WHATSAPP:</label>
+            <input required type="text" name="model-WHATSAPP-EMPNV" class="form-control" id="model-WHATSAPP-EMPNV" placeholder="+55 11 12345-6789">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button  id="CriaEmpresa" name='CriaEmpresa' type="submit" class="btn btn-primary" data-bs-dismiss="modal">confirmar</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-----------NOVA VAGA------------>
+<div class="modal fade" id="VagaNova" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Registrando nova vaga</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+
+        <form id="VagaForms" method="POST" class="row g-3">
+
+          <div class="col-md-6">
+          <label class="form-label">Entrada:</label>
+          <input type="time" class="form-control" name="model-Entrada-VNV" id="model-Entrada-VNV"required>
+          </div>
+          <div class="col-md-6">
+          <label class="form-label">Saida:</label>
+          <input type="time" class="form-control" name="model-Saida-VNV" id="model-Saida-VNV"required>
+          </div>
+          <div class="mb-3">
+          <label class="col-form-label">Atividades:</label>
+            <textarea  required type="text" name="model-Atividades-VNV" class="form-control" id="model-Atividades-VNV"></textarea>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button  id="CriaVaga" name='CriaVaga' type="submit" class="btn btn-primary" data-bs-dismiss="modal">confirmar</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
 </body>
 </html>
 <script type="text/javascript">
 
 //AJAX ENVIOS ALTERAÇÕES TABELA
+
+
 $('#CandidatoForms').submit(function(e){
   e.preventDefault()
-  var nome = $('#model-NOME').val();
-  var idade = $('#model-IDADE').val();
-  var bairro = $('#model-BAIRRO').val();
-  var email = $('#model-EMAIL').val();
-  var tel = $('#model-WHATSAPP').val();
-  var escolaridade = $('#model-ESCOLARIDADE').val();
-  var areaPret = $('#model-AREA-PRETENDIDA').val();
+  var nome = $('#model-NOME-CANV').val();
+  var idade = $('#model-IDADE-CANV').val();
+  var bairro = $('#model-BAIRRO-CANV').val();
+  var email = $('#model-EMAIL-CANV').val();
+  var tel = $('#model-WHATSAPP-CANV').val();
+  var escolaridade = $('#model-ESCOLARIDADE-CANV').val();
+  var areaPret = $('#model-AREA-PRETENDIDA-CANV').val();
+  console.log(nome,idade,bairro,email,tel, escolaridade,areaPret);
   $.ajax({
     url: 'candidatoNv.php',
     method: 'POST',
@@ -153,8 +251,51 @@ $('#CandidatoForms').submit(function(e){
     },
     dataType: 'json'
   }).done(function(b) {
-    Consulta()
+    alert("a")
   })
 })
+
+
+
+
+
+
+
+
+$('#EmpresaForms').submit(function(e){
+  e.preventDefault()
+  var agenciada = $('#model-Agenciada-EMPNV').val();
+  var nome = $('#model-NOME-EMPNV').val();
+  var Cep = $('#model-Cep-EMPNV').val();
+  var NumeroRes = $('#model-NumResiden-EMPNV').val();
+  var Outras = $('#model-OuInfoEnder-EMPNV').val();
+  var email = $('#model-EMAIL-EMPNV').val();
+  var tel = $('#model-WHATSAPP-EMPNV').val();
+
+  $.ajax({
+    url: 'EmpresaNv.php',
+    method: 'POST',
+    data: {
+      NOME: nome,
+      AGENCIADA: agenciada,
+      EMAIL: email,
+      TELEFONE: tel,
+      CEP: Cep,
+      NumeroResidencia: NumeroRes,
+      OutrasInformacoes: Outras
+    },
+    dataType: 'json'
+  }).done(function(b) {
+    alert("a")
+  })
+})
+
+
+
+
+
+
+
+
 
 </script>
