@@ -222,7 +222,7 @@ NOVA VAGA
         <div class="mb-3">
           <!-----------CURSO PAGO EXCLUSIVO PARA AGENCIADOS------------>
         <label  class="col-form-label">Curso Pago:</label>
-        <select class="form-select" aria-label="Default select example" form="VagaForms" name="model-Regime-VNV" id="model-Regime-VNV">
+        <select class="form-select"  form="VagaForms" name="model-CursoPago-VNV" id="model-CursoPago-VNV">
           <option selected value="TÉCNICO">SÓ TÉCNICO</option>
           <option value="SUPERIOR">SÓ SUPERIOR</option>
           <option value="TÉCNICO E SUPERIOR">TÉCNICO E SUPERIOR</option>
@@ -231,7 +231,7 @@ NOVA VAGA
         </div>
         <div class="mb-3">
           <label class="col-form-label">Perfil esperado:</label>
-            <textarea  required type="text" name="model-Atividades-VNV" class="form-control" id="model-Atividades-VNV"></textarea>
+            <textarea  required type="text" name="model-Perfil-VNV" class="form-control" id="model-Perfil-VNV"></textarea>
           </div>
           <label class="col-form-label">Horário de atuação:</label>
         <div class="col-md-6">
@@ -249,7 +249,7 @@ NOVA VAGA
           </div>
           <div class="mb-3">
           <label  class="col-form-label">ESCOLARIDADE MÍNIMA:</label>
-          <select class="form-select" aria-label="Default select example" form="VagaForms" name="model-ESCOLARIDADE-VNV" id="model-ESCOLARIDADE-VNV">
+          <select class="form-select" form="VagaForms" name="model-ESCOLARIDADE-VNV" id="model-ESCOLARIDADE-VNV">
             <option selected value="Fundamental">Fundamental</option>
             <option value="Medio_Cursando">Medio Cursando</option>
             <option value="Medio_Completo">Medio Completo</option>
@@ -346,5 +346,39 @@ $('#EmpresaForms').submit(function(e){
 
 
 
-
+$('#VagaForms').submit(function(e){
+  e.preventDefault()
+  var atividades = $('#model-Atividades-VNV').val();
+  var regime = $('#model-Regime-VNV').val();
+  var remuneracao = $('#model-Remuneracao-VNV').val();
+  var outrosBenef = $('#model-OutrosBenef-VNV').val();
+  var cursoPago = $('#model-CursoPago-VNV').val();
+  var perfilEsperado = $('#model-Perfil-VNV').val();
+  var hEntrada = $('#model-Entrada-VNV').val();
+  var hSainda = $('#model-Saida-VNV').val();
+  var idadeMin = $('#model-IDADE-VNV').val();
+  var escolaridade = $('#model-ESCOLARIDADE-VNV').val();
+  var deadline = $('#model-Deadline-VNV').val();
+  console.log(atividades,regime,remuneracao,outrosBenef,cursoPago,perfilEsperado,hEntrada,hSainda,idadeMin,escolaridade,deadline)
+  $.ajax({
+    url: 'vagaNv.php',
+    method: 'POST',
+    data: {
+      ATIVIDADES: atividades,
+      REGIME: regime,
+      REMUNERACAO: remuneracao,
+      OutrosBenef: outrosBenef,
+      CURSO_PAGO: cursoPago,
+      PERFIL: perfilEsperado,
+      H_ENTRADA: hEntrada,
+      H_SAIDA: hSainda,
+      IDADE_MIN: idadeMin,
+      ESCOLARIDADE: escolaridade,
+      DEADLINE: deadline
+    },
+    dataType: 'json'
+  }).done(function(b) {
+    alert("a")
+  })
+})
 </script>
