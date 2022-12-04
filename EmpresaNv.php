@@ -15,4 +15,17 @@ $querySQL .="'$Agenciada','$nome','$email','$telefone','$Cep',
 '$NumeroResidencia','$ObservacoesEndereco')";
 $result = mysqli_query($conn,$querySQL);
 
+
+$querySQL = "SELECT * FROM  `empresa` WHERE
+`Nome` = '$nome' AND
+`Email` = '$email'";
+$result = mysqli_query($conn,$querySQL);
+$linha = mysqli_fetch_assoc($result);
+$idEmpresa = $linha['idEmpresa'];
+
+$querySQL ="UPDATE `usuario_candidatoempresa`
+SET `idEmpresa`='$idEmpresa'
+WHERE `idUser` = '".$_SESSION['idUsuario']."'";
+$result = mysqli_query($conn,$querySQL);
+
 ?>

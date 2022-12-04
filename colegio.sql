@@ -56,5 +56,24 @@ CREATE TABLE `Usuario` (
   `idUser` int PRIMARY KEY AUTO_INCREMENT,
   `Email` varchar(50) NOT NULL,
   `Nome` varchar(50) NOT NULL,
+  `Senha` varchar(50) NOT NULL,
+  `Tipo` varchar(50) NOT NULL,
+  `Agenciada` tinyint(1),
+  `idCandidato` int,
+  `idEmpresa` int
+);
+
+CREATE TABLE `Usuario_Equipe` (
+  `idUser` int PRIMARY KEY AUTO_INCREMENT,
+  `Email` varchar(50) NOT NULL,
+  `Nome` varchar(50) NOT NULL,
   `Senha` varchar(50) NOT NULL
+);
+
+CREATE TABLE `Relacoes`(
+  `idRelacao` int PRIMARY KEY AUTO_INCREMENT,
+  `idCandidato` int,
+  `Nome` varchar(50) NOT NULL,
+  `idEmpresa` int,
+  `idVaga` int
 );

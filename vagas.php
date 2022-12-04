@@ -44,6 +44,9 @@
           <a class="nav-link" href="vagas.php">Vagas</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="centralUser.php">Central</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="logout.php">Logout</a>
         </li>
       </ul>

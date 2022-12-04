@@ -13,5 +13,17 @@ $escolaridade = mysqli_real_escape_string($conn,$_POST['ESCOLARIDADE']);
 $area = mysqli_real_escape_string($conn,$_POST['AREA']);
 $querySQL .="'$nome','$idade','$email','$telefone','$bairro','$escolaridade','$area')";
 $result = mysqli_query($conn,$querySQL);
-echo $querySQL;
+
+$querySQL = "SELECT * FROM  `candidato` WHERE
+`NomeCompleto` = '$nome' AND
+`Email` = '$email'";
+$result = mysqli_query($conn,$querySQL);
+$linha = mysqli_fetch_assoc($result);
+$idCandidato = $linha['idCandidato'];
+
+$querySQL ="UPDATE `usuario_candidatoempresa`
+SET `idCandidato`='$idCandidato'
+WHERE `idUser` = '".$_SESSION['idUsuario']."'";
+$result = mysqli_query($conn,$querySQL);
+
 ?>

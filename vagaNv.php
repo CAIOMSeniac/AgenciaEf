@@ -20,16 +20,16 @@ $deadline = mysqli_real_escape_string($conn,$_POST['DEADLINE']);
 
 
 
-$querySQL .="4,'$atividades','$regime','$remuneracao','$outrosBenef','$cursoPago'
+$querySQL .="".$_SESSION['idEmpresa'].",'$atividades','$regime','$remuneracao','$outrosBenef','$cursoPago'
 ,'$perfilEsperado','$idadeMin','$escolaridade','$hEntrada','$hSainda','$deadline',0,0)";
 $result = mysqli_query($conn,$querySQL);
 
 
-$querySQL = "SELECT `VagasAbertas` FROM `empresa` WHERE `idEmpresa` = 4";
+$querySQL = "SELECT `VagasAbertas` FROM `empresa` WHERE `idEmpresa` = ".$_SESSION['idEmpresa']."";
 $result = mysqli_query($conn,$querySQL);
 $linha=mysqli_fetch_assoc($result);
 $Vagas = $linha["VagasAbertas"];
 $VagasAtual = $Vagas + 1;
-$querySQL = "UPDATE `empresa` SET `VagasAbertas`=$VagasAtual WHERE `idEmpresa`= 4";
+$querySQL = "UPDATE `empresa` SET `VagasAbertas`=$VagasAtual WHERE `idEmpresa`= ".$_SESSION['idEmpresa']."";
 $result = mysqli_query($conn,$querySQL);
 ?>

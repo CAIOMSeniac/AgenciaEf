@@ -1,46 +1,3 @@
-<?php
-    session_start();
-    include_once('conexao_Banco.php');
-    if(isset($_POST['confirmar']))
-    {
-
-            $nome = mysqli_real_escape_string($conn,$_POST['nome']);
-            $senha = mysqli_real_escape_string($conn,$_POST['senha']);
-            $Sqlquery = "
-            SELECT * FROM `usuario_candidatoempresa` 
-            WHERE `Senha` = '$senha' 
-            AND `Nome` = '$nome' 
-            OR `Email` = '$nome'
-            ";
-            $result = mysqli_query($conn,$Sqlquery);
-            $row = mysqli_num_rows($result);
-            if($row == 1) {
-                $linha=mysqli_fetch_assoc($result);
-                $_SESSION['idUsuario'] = $linha["idUser"];
-                $_SESSION['NomeUsuario'] = $linha["Nome"];
-                header('Location:Dashboard.php');
-            } else {
-
-                $Sqlquery = "
-                SELECT * FROM `Usuario_Equipe` 
-                WHERE `Senha` = '$senha' 
-                AND `Nome` = '$nome' 
-                OR `Email` = '$nome'
-                ";
-                $result = mysqli_query($conn,$Sqlquery);
-                $row = mysqli_num_rows($result);
-                if($row == 1) {
-                    $linha=mysqli_fetch_assoc($result);
-                    $_SESSION['NomeUsuario'] = $linha["Nome"];
-                    header('Location:centralUser.php');
-                } else {
-                    $_SESSION['nao_autenticado'] = true;
-                    $login_conf=false;
-                }
-            }
-    }
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -71,20 +28,31 @@
 <section class="container">
 <img src="https://www.eniac.com.br/hs-fs/hubfs/Logos-Eniac-2019-1.png?width=1150&name=Logos-Eniac-2019-1.png" class='figure-img img-fluid rounded' width="200px">
 <br><br><br><br>
-<form action="index.php" method="POST">
-        <h1>Login</h1>
+<form id="CriarConta" method="POST">
+        <h1>Criar Conta</h1>
         <br><br><br>
         <div class="input-group">
         <div class="input-group-text" id="nomerequerido">requirido</div>
-        <input name = 'nome' type="text" class="form-control" placeholder="nome ou email" id="usuarionome" >
+        <input name = 'usuarionome' type="text" class="form-control" placeholder="nome" id="usuarionome" >
+        </div>
+        <br><br>
+        <div class="input-group">
+        <div class="input-group-text" id="nomerequerido">requirido</div>
+        <input name = 'usuarioemail' type="text" class="form-control" placeholder="email" id="usuarioemail" >
         </div>
         <br><br>
         <div class="input-group">
         <div class="input-group-text" id="senharequeriada">requirido</div>
-        <input name= 'senha' type="password"  class="form-control" placeholder="senha" id="usuariosenha">
+        <input name= 'usuariosenha' type="password"  class="form-control" placeholder="senha" id="usuariosenha">
         </div>
-        <br><br>
-        <input name="confirmar" type="submit" class="btn btn-primary"  value="validar" id="confirmar">
+        <div class="mb-3">
+                        <label  class="col-form-label">Tipo de Usuario:</label>
+                        <select class="form-select" form="CriarConta" name="tipousuario" id="tipousuario">
+                          <option selected value="CANDIDATO">CANDIDATO</option>
+                          <option value="EMPRESA">EMPRESA</option>
+                       </select>
+                        </div>
+        <input name="confirmar" type="submit" class="btn btn-primary"  value="Criar" id="confirmar">
         <br>
 </form>
 </section>
@@ -107,5 +75,24 @@
         }
     });
 
+$('#CriarConta').submit(function(e){
+  e.preventDefault()
+  var nome = $('#usuarionome').val();
+  var email = $('#usuarioemail').val();
+  var senha = $('#usuariosenha').val();
+  var tipo = $('#tipousuario').val();
+  $.ajax({
+    url: 'UserCandidatoEmpresaNv.php',
+    method: 'POST',
+    data: {
+      NOME: nome,
+      EMAIL: email,
+      SENHA: senha,
+      TIPO: tipo
+    },
+    dataType: 'json'
+  })
+    alert('Usuario Criado')
+})
 </script>
 </html>
